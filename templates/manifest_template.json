@@ -1,0 +1,17 @@
+{
+   "format_version" : 1,
+   "header" : {
+      "description" : "bedrockTools_description",
+      "name" : "bedrockTools_manifestName",
+      "uuid" : "bedrockTools_uuidOne",
+      "version" : [ 1, 0, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "bedrockTools_description",
+         "type" : "bedrockTool_packType",
+         "uuid" : "bedrockTools_uuidTwo",
+         "version" : [ 1, 0, 0 ]
+      }
+   ]
+}

@@ -2,39 +2,45 @@
 <html lang="en">
 
 <head>
-    <title>Hatchibombotar</title>
-    <!-- add icon link -->
-    <link rel="icon" href="../images/logo_no_border.png" type="image/x-icon">
-
-
+    <title>Bedrock Tools</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/main.css">
     <script src=./js/manifest.js></script>
+    <!-- <script src=./js/jquery-3.5.1.min.js></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
     <div class="header">
-        <h1>Bedrock Tools - Manifest Generator</h1>
+        <img src="./images/bedrock-tools.png" alt="Bedrock Tools Icon" width="75">
+        <h1 class="icon">Bedrock Tools - Manifest Generator</h1>
     </div>
     <div class="main">
         <div class="form">
-            <form onsubmit="download(this['manifest_name'].value, this['description'].value, this['author'].value, this['manifest_type'].value)">
-                <input type="text" name="manifest_name" value="Name">
-                <input type="text" name="description" value="Description">
-                <input type="text" name="author" value="Author">
-                <select name="manifest_type">
-                    <option value="none" disabled>Select an Option:</option>
-                    <option value="resources">Resource Pack</option>
-                    <option value="data">Behaviour Pack</option>
-                    <option value="skin_pack">Skin Pack</option>
-                </select>
+            <form
+                onsubmit="download(this['manifest_name'].value, this['description'].value, this['author'].value, this['manifest_type'].value)">
+                <label>Pack name: <input type="text" name="manifest_name" value=""></label>
+                <label>Description:<input type="text" name="description" value=""></label>
+                <label>Manifest type:<select name="manifest_type">
+                        <option value="none" disabled>Select an Option:</option>
+                        <option value="resources">Resource Pack</option>
+                        <option value="data">Behaviour Pack</option>
+                        <option value="skin_pack">Skin Pack</option>
+                    </select></label>
+                <label>Advanced Settings: <input type="checkbox" name="advanced_manifest" id="advanced"
+                        onclick="advancedSettings()"></label>
+                <div id="advanced_settings" style="display:none">
+                    <br>
+                    <label>Author:<input type="text" name="author" value=""></label>
+                </div>
 
                 <input type="submit" value="Download">
             </form>
         </div>
+        <br>
+        <a id="footnote">   This project is open source. You can view the code or contribute on <a href="https://github.com/Hatchibombotar/bedrock-tools">Github.</a></a>
     </div>
 </body>
 

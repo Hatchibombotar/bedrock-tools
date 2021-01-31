@@ -2,7 +2,8 @@ function download(manifest_name, description, author, manifest_type) {
     var uuidOne = createUUID();
     var uuidTwo = createUUID();
     var filename = "manifest.json";
-    var template = getTemplate();
+    var template = JSON.stringify(getTemplate(), null, 2);
+    console.log(template);
 
     var mapObj = {
         bedrockTools_description: description,
@@ -49,4 +50,14 @@ function getTemplate() {
         return template;
     })();
     return template;
+}
+
+function advancedSettings() {
+    var checkBox = document.getElementById("advanced");
+    var settings = document.getElementById("advanced_settings");
+    if (checkBox.checked == true) {
+        settings.style.display = "block";
+    } else {
+        settings.style.display = "none";
+    }
 }

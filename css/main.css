@@ -34,5 +34,15 @@ body {
 }
 
 .header h1 {
-  padding: 5px;
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+.header img {
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+#footnote {
+  padding-left: 15px;
 }

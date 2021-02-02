@@ -1,0 +1,22 @@
+input[type=text], select {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #6e6e6e;
+}
+  
+input[type=submit] {
+  background-color: #6e6e6e;
+  
+}
+  
+input[type=submit]:hover {
+  background-color: rgb(105, 105, 105);
+}
+  
+form {
+  background-color: #3a3a3a;
+}
+
+body {
+  background-color: #313131;
+  color: white;
+}

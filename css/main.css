@@ -35,6 +35,18 @@ body {
   padding-bottom: 0px;
 }
 
-footer {
-  padding: 15px;
+.footer {
+  padding-left: 15px;
+}
+.main{
+  padding-left: 15px;
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }

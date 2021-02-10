@@ -24,7 +24,7 @@
     <div class="main">
         <div class="form">
             <form
-                onsubmit="download(this['manifest_name'].value, this['description'].value, this['author'].value, this['manifest_type'].value); return false;">
+                onsubmit="download(this['manifest_name'].value, this['description'].value, this['author'].value, this['manifest_type'].value, this['version'].value); return false;">
                 <label>Pack name: <input type="text" name="manifest_name" value=""></label>
                 <label>Description:<input type="text" name="description" value=""></label>
                 <label>Manifest type:<select name="manifest_type">
@@ -34,19 +34,20 @@
                         <option value="skin_pack">Skin Pack</option>
                         <option value="world_template">World Template</option>
                     </select></label>
-                <label>Advanced Settings: <input type="checkbox" name="advanced_manifest" id="advanced"
-                        onclick="advancedSettings()"></label>
                 <label>Metadata: <input type="checkbox" name="Metadata" id="metadata"
                         onclick="metadataSettings()"></label>
-                <div id="advanced_settings" style="display:none">
-                    <br>
-                    <label>Author:<input type="text" name="author" value=""></label>
-                    <label>Url:<input type="text" name="url" value=""></label>
-                </div>
+                <label>Advanced Settings: <input type="checkbox" name="advanced_manifest" id="advanced"
+                        onclick="advancedSettings()"></label>
                 <div id="metadata_settings" style="display:none">
                     <br>
                     <label>Author:<input type="text" name="author" value=""></label>
                     <label>Url:<input type="text" name="url" value=""></label>
+                </div>
+                <div id="advanced_settings" style="display:none">
+                    <br>
+                    <label>Version:<input type="text" name="version" value="1, 0, 0"></label>
+                    <label>Can only be played in worlds?: <input type="checkbox" name="WorldOnlyToggle"
+                            id="WorldOnlyToggle"></label>
                 </div>
 
                 <input type="submit" value="Generate">

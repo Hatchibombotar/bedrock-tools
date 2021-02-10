@@ -1,4 +1,4 @@
-function download(manifest_name, description, author, manifest_type) {
+function download(manifest_name, description, author, manifest_type, version) {
     var uuidOne = createUUID();
     var uuidTwo = createUUID();
     var filename = "manifest.json";
@@ -10,9 +10,10 @@ function download(manifest_name, description, author, manifest_type) {
         bedrockTools_manifestName: manifest_name,
         bedrockTools_uuidOne: uuidOne,
         bedrockTools_uuidTwo: uuidTwo,
-        bedrockTool_packType: manifest_type
+        bedrockTool_packType: manifest_type,
+        bedrockTools_version: version
     };
-    var content = template.replace(/bedrockTools_description|bedrockTools_manifestName|bedrockTools_uuidOne|bedrockTools_uuidTwo|bedrockTool_packType/gi, function (matched) {
+    var content = template.replace(/bedrockTools_description|bedrockTools_manifestName|bedrockTools_uuidOne|bedrockTools_uuidTwo|bedrockTool_packType|bedrockTools_version/gi, function (matched) {
         return mapObj[matched];
     });
     document.getElementById('output').innerHTML = content;

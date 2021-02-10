@@ -4,14 +4,14 @@
       "description" : "bedrockTools_description",
       "name" : "bedrockTools_manifestName",
       "uuid" : "bedrockTools_uuidOne",
-      "version" : [ bedrockTools_version ]
+      "version" : [ 1,0,0 ]
    },
    "modules" : [
       {
          "description" : "bedrockTools_description",
          "type" : "bedrockTool_packType",
          "uuid" : "bedrockTools_uuidTwo",
-         "version" : [ bedrockTools_version ]
+         "version" : [ 1, 0, 0 ]
       }
    ]
 }

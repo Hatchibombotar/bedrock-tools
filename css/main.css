@@ -38,7 +38,7 @@ body {
 .footer {
   padding-left: 15px;
 }
-.main{
+.main {
   padding-left: 15px;
 }
 
@@ -49,4 +49,42 @@ body {
   align-items: center;
   text-align: center;
   min-height: 100vh;
+}
+
+#output {
+  padding: 7px;
+  white-space: pre;
+  border-radius: 5px;
+  resize: none;
+  border: none;
+}
+
+#copy_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 30%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#copy {
+  position: relative;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.item1 { grid-area: output; }
+.item2 { grid-area: copy; }
+
+.grid-container {
+  padding-top: 15px;
+  display: grid;
+  grid-template-areas: 'output copy';
+  grid-gap: 10px;
 }

@@ -18,3 +18,13 @@ form {
 body {
   background-color: #f5f5f5;
 }
+
+#output {
+  background-color: white;
+  color: black;
+}
+
+#copy_button {
+  background-color: #b4b4b4;
+    color: white;
+}

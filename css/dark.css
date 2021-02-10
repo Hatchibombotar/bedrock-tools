@@ -20,3 +20,14 @@ body {
   background-color: #313131;
   color: white;
 }
+
+#output {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+#copy_button {
+  background-color: #6e6e6e;
+  color: black;
+  font-weight: bold;
+}

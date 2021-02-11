@@ -8,8 +8,7 @@ function download(manifest_name, description, author, manifest_type, version_1, 
             "name": "",
             "description": "",
             "uuid": "",
-            "version": [],
-            "min_engine_version": []
+            "version": []
         },
         "modules": [
             {
@@ -24,11 +23,10 @@ function download(manifest_name, description, author, manifest_type, version_1, 
     template.header.uuid = createUUID();
     template.modules[0].uuid = createUUID();
     template.modules[0].type = manifest_type;
-    
     template.header.version[0] = parseInt(version_1);
     template.header.version[1] = parseInt(version_2);
     template.header.version[2] = parseInt(version_3);
-
+    template.header.min_engine_version = "nin";
     template.modules[0].version[0] = parseInt(version_1);
     template.modules[0].version[1] = parseInt(version_2);
     template.modules[0].version[2] = parseInt(version_3);
@@ -61,6 +59,17 @@ function advancedSettings() {
 function metadataSettings() {
     var checkBox = document.getElementById("metadata");
     var settings = document.getElementById("metadata_settings");
+    if (checkBox.checked == true) {
+        settings.style.display = "block";
+    } else {
+        settings.style.display = "none";
+    }
+}
+
+// enables capabilities
+function capabilitiesSettings() {
+    var checkBox = document.getElementById("capabilities");
+    var settings = document.getElementById("capabilities_settings");
     if (checkBox.checked == true) {
         settings.style.display = "block";
     } else {

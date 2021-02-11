@@ -41,12 +41,24 @@
                     <br>
                     <label>Author:<input type="text" name="author" value=""></label>
                     <label>Url:<input type="text" name="url" value=""></label>
+                    <label>Licence:<input type="text" name="licence" value=""></label>
                 </div>
                 <div id="advanced_settings" style="display:none">
                     <br>
-                    <label>Version:<br><input type="number" name="version_1" value="0" min="0" max="9"><input type="number" name="version_2" value="0" min="0" max="9"><input type="number" name="version_3" value="1" min="0" max="9"></label><br>
-                    <label>Can only be played in worlds?: <input type="checkbox" name="WorldOnlyToggle"
-                            id="WorldOnlyToggle"></label>
+                    <label>Version:<br><input type="number" name="version_1" value="0" min="0" max="9"><input
+                            type="number" name="version_2" value="0" min="0" max="9"><input type="number"
+                            name="version_3" value="1" min="0" max="9"></label><br>
+                    <label>Minimum engine version (leave as zero for none):<br><input type="number" name="min_version_1"
+                            value="0" min="0" max="9"><input type="number" name="min_version_2" value="0" min="0"
+                            max="9"><input type="number" name="min_version_3" value="0" min="0" max="9"></label><br>
+                    <label>Capabilities: <input type="checkbox" name="capabilities" id="capabilities"
+                            onclick="capabilitiesSettings()"></label>
+                    <div id="capabilities_settings" style="display:none">
+                        <label>Worlds Only?: <input type="checkbox" name="worlds_only" id="worlds_only"></label>
+                        <label>Chemistry?: <input type="checkbox" name="chemistry" id="chemistry"></label>
+                        <label>Experimental UI?: <input type="checkbox" name="experimental_ui"
+                                id="experimental_ui"></label>
+                    </div>
                 </div>
 
                 <input type="submit" value="Generate">

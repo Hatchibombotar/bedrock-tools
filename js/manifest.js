@@ -1,21 +1,39 @@
-function download(manifest_name, description, author, manifest_type, version) {
+function download(manifest_name, description, author, manifest_type, version_1, version_2, version_3) {
     var uuidOne = createUUID();
     var uuidTwo = createUUID();
     var filename = "manifest.json";
-    var template = JSON.stringify(getTemplate(), null, 2);
-
-
-    var mapObj = {
-        bedrockTools_description: description,
-        bedrockTools_manifestName: manifest_name,
-        bedrockTools_uuidOne: uuidOne,
-        bedrockTools_uuidTwo: uuidTwo,
-        bedrockTool_packType: manifest_type,
-        bedrockTools_version: version
+    var template = {
+        "format_version": 2,
+        "header": {
+            "name": "",
+            "description": "",
+            "uuid": "",
+            "version": [],
+            "min_engine_version": []
+        },
+        "modules": [
+            {
+                "type": "",
+                "uuid": "",
+                "version": []
+            }
+        ]
     };
-    var content = template.replace(/bedrockTools_description|bedrockTools_manifestName|bedrockTools_uuidOne|bedrockTools_uuidTwo|bedrockTool_packType|bedrockTools_version/gi, function (matched) {
-        return mapObj[matched];
-    });
+    template.header.name = manifest_name;
+    template.header.description = description;
+    template.header.uuid = createUUID();
+    template.modules[0].uuid = createUUID();
+    template.modules[0].type = manifest_type;
+    
+    template.header.version[0] = parseInt(version_1);
+    template.header.version[1] = parseInt(version_2);
+    template.header.version[2] = parseInt(version_3);
+
+    template.modules[0].version[0] = parseInt(version_1);
+    template.modules[0].version[1] = parseInt(version_2);
+    template.modules[0].version[2] = parseInt(version_3);
+
+    var content = JSON.stringify(template, null, 2);
     document.getElementById('output').innerHTML = content;
     autosize(document.getElementById('output'));
 }
@@ -27,25 +45,6 @@ function createUUID() {
         return v.toString(16);
     });
 }
-
-// fetches the content of the template
-function getTemplate() {
-    var template = (function () {
-        var template = null;
-        $.ajax({
-            'async': false,
-            'global': false,
-            'url': "../templates/manifest_template.json",
-            'dataType': "json",
-            'success': function (data) {
-                template = data;
-            }
-        });
-        return template;
-    })();
-    return template;
-}
-
 
 // enables advanced options
 function advancedSettings() {

@@ -10,6 +10,10 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #b4b4b4;
 }
+
+input[type=number] {
+  background-color: #b4b4b4; 
+}
   
 form {
   background-color: #f2f2f2;

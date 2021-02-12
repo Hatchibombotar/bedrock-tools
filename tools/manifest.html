@@ -24,7 +24,7 @@
     <div class="main">
         <div class="form">
             <form
-                onsubmit="download(this['manifest_name'].value, this['description'].value, this['author'].value, this['manifest_type'].value, this['version_1'].value, this['version_2'].value, this['version_3'].value); return false;">
+                onsubmit="download(this['manifest_name'].value, this['description'].value, this['manifest_type'].value, this['author'].value, this['url'].value, this['licence_selection'].value, this['version_1'].value, this['version_2'].value, this['version_3'].value, this['min_version_1'].value, this['min_version_2'].value, this['min_version_3'].value); return false;">
                 <label>Pack name: <input type="text" name="manifest_name" value=""></label>
                 <label>Description:<input type="text" name="description" value=""></label>
                 <label>Manifest type:<select name="manifest_type">
@@ -32,6 +32,7 @@
                         <option value="data">Behaviour Pack</option>
                         <option value="skin_pack">Skin Pack</option>
                         <option value="world_template">World Template</option>
+                        <option value="client_data">Scripts</option>
                     </select></label>
                 <label>Metadata: <input type="checkbox" name="Metadata" id="metadata"
                         onclick="metadataSettings()"></label>
@@ -41,7 +42,7 @@
                     <br>
                     <label>Author:<input type="text" name="author" value=""></label>
                     <label>Url:<input type="text" name="url" value=""></label>
-                    <label>Licence:<input type="text" name="licence" value=""></label>
+                    <label>Licence:<input type="text" name="licence_selection" value=""></label>
                 </div>
                 <div id="advanced_settings" style="display:none">
                     <br>
@@ -49,8 +50,8 @@
                             type="number" name="version_2" value="0" min="0" max="9"><input type="number"
                             name="version_3" value="1" min="0" max="9"></label><br>
                     <label>Minimum engine version (leave as zero for none):<br><input type="number" name="min_version_1"
-                            value="0" min="0" max="9"><input type="number" name="min_version_2" value="0" min="0"
-                            max="9"><input type="number" name="min_version_3" value="0" min="0" max="9"></label><br>
+                            value="0" min="0" max="99"><input type="number" name="min_version_2" value="0" min="0"
+                            max="999"><input type="number" name="min_version_3" value="0" min="0"></label><br>
                     <label>Capabilities: <input type="checkbox" name="capabilities" id="capabilities"
                             onclick="capabilitiesSettings()"></label>
                     <div id="capabilities_settings" style="display:none">

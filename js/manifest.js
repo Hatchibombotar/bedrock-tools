@@ -1,7 +1,4 @@
-function download(manifest_name, description, author, manifest_type, version_1, version_2, version_3) {
-    var uuidOne = createUUID();
-    var uuidTwo = createUUID();
-    var filename = "manifest.json";
+function download(manifest_name, description, manifest_type, author, url, licence_selection, version_1, version_2, version_3, min_version_1, min_version_2, min_version_3) {
     var template = {
         "format_version": 2,
         "header": {
@@ -26,10 +23,38 @@ function download(manifest_name, description, author, manifest_type, version_1, 
     template.header.version[0] = parseInt(version_1);
     template.header.version[1] = parseInt(version_2);
     template.header.version[2] = parseInt(version_3);
-    template.header.min_engine_version = "nin";
     template.modules[0].version[0] = parseInt(version_1);
     template.modules[0].version[1] = parseInt(version_2);
     template.modules[0].version[2] = parseInt(version_3);
+    if (document.getElementById("metadata").checked == true) {
+        template.metadata = { license: licence_selection, url: url, authors: [author] }
+    }
+    if (manifest_type == "client_data") {
+        template.modules[1] = { "type": "data", "uuid": createUUID(), "version": [] };
+        template.modules[1].version[0] = parseInt(version_1);
+        template.modules[1].version[1] = parseInt(version_2);
+        template.modules[1].version[2] = parseInt(version_3);
+    }
+    if (document.getElementById("advanced").checked == true) {
+        if (min_version_1 == 0 && min_version_2 == 0 && min_version_3 == 0) { } else {
+            template.header.min_engine_version = [parseInt(min_version_1), parseInt(min_version_2), parseInt(min_version_3)];
+        }
+        if (document.getElementById("capabilities").checked == true) {
+            if (document.getElementById("worlds_only").checked == true) {
+                template.header.pack_scope = "world";
+
+            }
+            if (document.getElementById("chemistry").checked == true) {
+                template.capabilities = ["chemistry"];
+            }
+            if (document.getElementById("experimental_ui").checked == true) {
+                template.capabilities = ["experimental_custom_ui"];
+            }
+            if (document.getElementById("experimental_ui").checked == true && document.getElementById("chemistry").checked == true) {
+                template.capabilities = ["chemistry", "experimental_custom_ui"];
+            }
+        }
+    }
 
     var content = JSON.stringify(template, null, 2);
     document.getElementById('output').innerHTML = content;

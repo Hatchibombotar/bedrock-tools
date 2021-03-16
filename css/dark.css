@@ -16,17 +16,17 @@ input[type=number] {
   color: white;
 }
   
-form {
-  background-color: #3a3a3a;
+.form {
+  background-color: #34333a;
 }
 
 body {
-  background-color: #313131;
+  background-color: #27262B;
   color: white;
 }
 
 #output {
-  background-color: #3a3a3a;
+  background-color: #34333a;
   color: white;
 }
 
@@ -34,4 +34,8 @@ body {
   background-color: #6e6e6e;
   color: black;
   font-weight: bold;
+}
+
+.mainsection_updatecsslater {
+  background-color: #34333a;
 }

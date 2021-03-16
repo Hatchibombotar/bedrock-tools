@@ -15,7 +15,7 @@ input[type=number] {
   background-color: #b4b4b4; 
 }
   
-form {
+.form {
   background-color: #f2f2f2;
 }
 
@@ -24,11 +24,15 @@ body {
 }
 
 #output {
-  background-color: white;
+  background-color: #f2f2f2;
   color: black;
 }
 
 #copy_button {
   background-color: #b4b4b4;
     color: white;
+}
+
+.mainsection_updatecsslater {
+  background-color: #f2f2f2;
 }

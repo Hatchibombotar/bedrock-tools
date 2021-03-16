@@ -3,6 +3,7 @@ input[type=text], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
+    border: none;
     box-sizing: border-box;
 }
   
@@ -39,7 +40,9 @@ form {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+.header {
+  text-align: center;
+}
 .header h1 {
   padding: 15px;
   padding-bottom: 0px;
@@ -102,4 +105,18 @@ body {
   display: grid;
   grid-template-areas: 'output copy';
   grid-gap: 10px;
+}
+
+.user_avatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 1px
+}
+
+.mainsection_updatecsslater {
+  /* margin-top: -20px; */
+  padding-top: 10;
+  border-radius: 5px;
+  padding: 20px;
 }

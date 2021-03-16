@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/bedrock-tools.png" type="image/x-icon">
+
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/dark.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="../css/light.css" media="(prefers-color-scheme: light)">
@@ -23,46 +24,47 @@
     </div>
     <div class="main">
         <div class="form">
-            <form
-                onsubmit="download(this['manifest_name'].value, this['description'].value, this['manifest_type'].value, this['author'].value, this['url'].value, this['licence_selection'].value, this['version_1'].value, this['version_2'].value, this['version_3'].value, this['min_version_1'].value, this['min_version_2'].value, this['min_version_3'].value); return false;">
-                <label>Pack name: <input type="text" name="manifest_name" value=""></label>
-                <label>Description:<input type="text" name="description" value=""></label>
-                <label>Manifest type:<select name="manifest_type">
-                        <option value="resources">Resource Pack</option>
-                        <option value="data">Behaviour Pack</option>
-                        <option value="skin_pack">Skin Pack</option>
-                        <option value="world_template">World Template</option>
-                        <option value="client_data">Scripts</option>
-                    </select></label>
-                <label>Metadata: <input type="checkbox" name="Metadata" id="metadata"
-                        onclick="metadataSettings()"></label>
-                <label>Advanced Settings: <input type="checkbox" name="advanced_manifest" id="advanced"
-                        onclick="advancedSettings()"></label>
-                <div id="metadata_settings" style="display:none">
-                    <br>
-                    <label>Author:<input type="text" name="author" value=""></label>
-                    <label>Url:<input type="text" name="url" value=""></label>
-                    <label>Licence:<input type="text" name="licence_selection" value=""></label>
+            <form id="form_area"
+            <label>Pack name: <input id="file.header.name" type="text" name="manifest_name" value=""></label>
+            <label>Description:<input id="file.header.description" type="text" name="description" value=""></label>
+            <label>Manifest type:<select id="file.modules[0].type" name="manifest_type">
+                    <option value="resources">Resource Pack</option>
+                    <option value="data">Behaviour Pack</option>
+                    <option value="skin_pack">Skin Pack</option>
+                    <option value="world_template">World Template</option>
+                    <option value="client_data">Scripts</option>
+                </select></label>
+            <label>Metadata: <input id="toggle.metadata" type="checkbox" name="Metadata"
+                    onclick="metadataSettings()"></label>
+            <label>Advanced Settings: <input type="checkbox" name="advanced_manifest" id="advanced"
+                    onclick="advancedSettings()"></label>
+            <div id="metadata_settings" style="display:none">
+                <br>
+                <label>Author:<input id="file.metadata.authors" type="text" name="author" value=""></label>
+                <label>Url:<input id="file.metadata.url" type="text" name="url" value=""></label>
+                <label>Licence:<input id="file.metadata.license" type="text" name="licence_selection" value=""></label>
+            </div>
+            <div id="advanced_settings" style="display:none">
+                <br>
+                <label>Version:<br><input id="file.header.version[0]" type="number" name="version_1" value="0" min="0"
+                        max="9"><input id="file.header.version[1]" type="number" name="version_2" value="0" min="0"
+                        max="9"><input id="file.header.version[2]" type="number" name="version_3" value="1" min="0"
+                        max="9"></label><br>
+                <label>Minimum engine version:<br><input id="file.header.min_engine_version[0]" type="number"
+                        name="min_version_1" value="1" min="0" max="99"><input id="file.header.min_engine_version[1]"
+                        type="number" name="min_version_2" value="16" min="0" max="999"><input
+                        id="file.header.min_engine_version[2]" type="number" name="min_version_3" value="210"
+                        min="0"></label><br>
+                <label>Capabilities: <input type="checkbox" name="capabilities" id="capabilities"
+                        onclick="capabilitiesSettings()"></label>
+                <div id="capabilities_settings" style="display:none">
+                    <label>Worlds Only?: <input type="checkbox" name="worlds_only" id="worlds_only"></label>
+                    <label>Chemistry?: <input type="checkbox" name="chemistry" id="chemistry"></label>
+                    <label>Experimental UI?: <input type="checkbox" name="experimental_ui" id="experimental_ui"></label>
                 </div>
-                <div id="advanced_settings" style="display:none">
-                    <br>
-                    <label>Version:<br><input type="number" name="version_1" value="0" min="0" max="9"><input
-                            type="number" name="version_2" value="0" min="0" max="9"><input type="number"
-                            name="version_3" value="1" min="0" max="9"></label><br>
-                    <label>Minimum engine version (leave as zero for none):<br><input type="number" name="min_version_1"
-                            value="0" min="0" max="99"><input type="number" name="min_version_2" value="0" min="0"
-                            max="999"><input type="number" name="min_version_3" value="0" min="0"></label><br>
-                    <label>Capabilities: <input type="checkbox" name="capabilities" id="capabilities"
-                            onclick="capabilitiesSettings()"></label>
-                    <div id="capabilities_settings" style="display:none">
-                        <label>Worlds Only?: <input type="checkbox" name="worlds_only" id="worlds_only"></label>
-                        <label>Chemistry?: <input type="checkbox" name="chemistry" id="chemistry"></label>
-                        <label>Experimental UI?: <input type="checkbox" name="experimental_ui"
-                                id="experimental_ui"></label>
-                    </div>
-                </div>
+            </div>
 
-                <input type="submit" value="Generate">
+            <input type="submit" value="Generate" onclick="createFile(); return false">
             </form>
         </div>
         <div class="grid-container">

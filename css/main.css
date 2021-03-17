@@ -5,6 +5,7 @@ body {
 input[type=text], select, input[type=submit], input[type=number], #copy_button {
   border: 0px;
   background-color: var(--form-element-colour);
+  -webkit-appearance:none
 }
 .form {
   background-color: var(--primary-colour);
@@ -21,6 +22,7 @@ input[type=text], select, input[type=submit], input[type=number], #copy_button {
 
 input[type=submit]:hover {
   background-color: var(--form-element-hover);
+  -webkit-appearance:none
 }
 
 input[type=text], select {

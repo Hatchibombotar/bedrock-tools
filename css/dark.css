@@ -1,41 +1,7 @@
-input[type=text], select {
-    border: 1px solid rgb(0, 0, 0);
-    background-color: #6e6e6e;
-}
-  
-input[type=submit] {
-  background-color: #6e6e6e; 
-}
-  
-input[type=submit]:hover {
-  background-color: rgb(105, 105, 105);
-}
-
-input[type=number] {
-  background-color: #6e6e6e; 
-  color: white;
-}
-  
-.form {
-  background-color: #34333a;
-}
-
 body {
-  background-color: #27262B;
-  color: white;
-}
-
-#output {
-  background-color: #34333a;
-  color: white;
-}
-
-#copy_button {
-  background-color: #6e6e6e;
-  color: black;
-  font-weight: bold;
-}
-
-.mainsection_updatecsslater {
-  background-color: #34333a;
+  --background-colour: #27262B;
+  --primary-colour: #34333a;
+  --text-colour: white;
+  --form-element-colour: #6e6e6e;
+  --form-element-hover: #696969;
 }

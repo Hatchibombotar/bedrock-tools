@@ -1,3 +1,28 @@
+body {
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+}
+input[type=text], select, input[type=submit], input[type=number], #copy_button {
+  border: 0px;
+  background-color: var(--form-element-colour);
+}
+.form {
+  background-color: var(--primary-colour);
+}
+
+#output {
+  background-color: var(--primary-colour);
+  color: var(--text-colour);
+}
+
+.mainsection_updatecsslater {
+  background-color: var(--primary-colour);
+}
+
+input[type=submit]:hover {
+  background-color: var(--form-element-hover);
+}
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
